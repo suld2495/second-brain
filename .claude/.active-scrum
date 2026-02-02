@@ -1,8 +1,0 @@
-SC-28
-제목: 메모 생성 API 구현
-목표: POST /api/memos 엔드포인트 구현
-수용기준:
-- POST /api/memos 엔드포인트 동작
-- content 필드로 메모 생성 가능
-- 생성된 메모 객체 반환 (id, content, createdAt)
-- 빈 content 시 400 에러 반환
