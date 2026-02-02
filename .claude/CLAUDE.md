@@ -54,10 +54,12 @@ When a task involves a specific area, load the matching convention skill before 
 | `*.ts`, `*.tsx` | `conv-javascript` |
 | `*.tsx` | `conv-components` (additionally) |
 | `api.ts` or `/api/` paths | `conv-api` (additionally) |
+| `git commit`, `git push` | `conv-git` |
 
 Skill documentation:
 - `conv-javascript`: `.claude/skills/conv-javascript/SKILL.md`
 - `conv-components`: `.claude/skills/conv-components/SKILL.md`
 - `conv-api`: `.claude/skills/conv-api/SKILL.md`
+- `conv-git`: `.claude/skills/conv-git/SKILL.md`
 
 **Note**: This is enforced by the `skill-guard.sh` hook. Read the relevant SKILL.md before editing code files.

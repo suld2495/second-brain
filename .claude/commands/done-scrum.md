@@ -1,6 +1,5 @@
 ---
 description: Jira Scrum(Task) 이슈를 완료 상태로 전환합니다
-agent: planner
 ---
 사용법: `/done-scrum [issue-key]`
 
@@ -47,7 +46,20 @@ agent: planner
    }
    ```
 
-### 5. 로컬 상태 정리
+### 5. Git 커밋 및 푸시
+1. `git status`로 변경된 파일 확인
+2. 해당 스크럼에서 작업한 파일만 스테이징 (관련 없는 파일 제외)
+3. 커밋 메시지 형식:
+   ```
+   feat(<issue-key>): <issue-summary>
+
+   - 변경 내용 요약
+
+   Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
+   ```
+4. `git push`로 원격 저장소에 푸시
+
+### 6. 로컬 상태 정리
 1. `.claude/.active-scrum` 파일 삭제 (완료한 이슈와 일치하는 경우)
 2. `docs/STATUS.md` 업데이트 (선택사항)
 
