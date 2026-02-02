@@ -59,7 +59,27 @@ description: Jira Scrum(Task) 이슈를 완료 상태로 전환합니다
    ```
 4. `git push`로 원격 저장소에 푸시
 
-### 6. 로컬 상태 정리
+### 6. 브랜치 머지 및 정리
+1. main 브랜치로 전환:
+   ```bash
+   git checkout main
+   git pull origin main
+   ```
+2. feature 브랜치 머지:
+   ```bash
+   git merge feature/<issue-key>
+   ```
+3. main 브랜치 푸시:
+   ```bash
+   git push origin main
+   ```
+4. feature 브랜치 삭제:
+   ```bash
+   git branch -d feature/<issue-key>
+   git push origin --delete feature/<issue-key>
+   ```
+
+### 7. 로컬 상태 정리
 1. `.claude/.active-scrum` 파일 삭제 (완료한 이슈와 일치하는 경우)
 2. `docs/STATUS.md` 업데이트 (선택사항)
 

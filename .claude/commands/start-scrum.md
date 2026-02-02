@@ -47,7 +47,17 @@ description: Jira Scrum(Task) 이슈를 진행 중 상태로 전환합니다
    }
    ```
 
-### 5. 로컬 상태 파일 업데이트
+### 5. Feature 브랜치 생성
+1. 현재 브랜치가 main인지 확인
+2. main에서 새 feature 브랜치 생성:
+   ```bash
+   git checkout main
+   git pull origin main
+   git checkout -b feature/<issue-key>
+   ```
+3. 브랜치 명명 규칙: `feature/<issue-key>` (예: `feature/SC-28`)
+
+### 6. 로컬 상태 파일 업데이트
 1. `.claude/.active-scrum` 파일에 이슈 키 저장:
    ```
    <issue-key>
@@ -61,6 +71,7 @@ description: Jira Scrum(Task) 이슈를 진행 중 상태로 전환합니다
 **이슈**: <issue-key>
 **제목**: <issue-summary>
 **상태**: To Do → In Progress
+**브랜치**: feature/<issue-key>
 
 Jira 링크: https://<site>.atlassian.net/browse/<issue-key>
 
