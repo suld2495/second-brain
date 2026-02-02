@@ -1,6 +1,5 @@
 ---
 description: Jira에 Story 이슈를 생성합니다 (Epic 하위)
-agent: planner
 ---
 사용법: `/create-story <epic-key> <requirements.md> [--plan]`
 

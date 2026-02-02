@@ -1,6 +1,5 @@
 ---
 description: Jira에 Scrum(Task) 이슈를 생성합니다 (Story 하위)
-agent: planner
 ---
 사용법: `/create-scrum <story-key> <requirements.md> [--plan]`
 

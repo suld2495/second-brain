@@ -1,6 +1,5 @@
 ---
 description: Jira Scrum(Task) 이슈를 진행 중 상태로 전환합니다
-agent: planner
 ---
 사용법: `/start-scrum <issue-key>`
 

@@ -1,6 +1,5 @@
 ---
 description: Jira에 Epic 이슈를 생성합니다
-agent: planner
 ---
 사용법: `/create-epic <requirements.md> [--plan]`
 
