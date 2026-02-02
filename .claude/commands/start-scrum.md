@@ -58,11 +58,18 @@ description: Jira Scrum(Task) 이슈를 진행 중 상태로 전환합니다
 3. 브랜치 명명 규칙: `feature/<issue-key>` (예: `feature/SC-28`)
 
 ### 6. 로컬 상태 파일 업데이트
-1. `.claude/.active-scrum` 파일에 이슈 키 저장:
+1. `.claude/.active-scrum` 파일에 이슈 정보 저장:
    ```
    <issue-key>
+   제목: <issue-summary>
+   목표: <issue-description에서 목표 추출>
+   수용기준:
+   - <수용 기준 1>
+   - <수용 기준 2>
+   - ...
    ```
 2. 이 파일은 `repo-guardrails.js` 훅에서 활성 Scrum 여부를 확인하는 데 사용됩니다.
+3. 작업 내용을 파악할 수 있도록 충분한 정보를 포함합니다.
 
 ## 출력 형식
 ```
