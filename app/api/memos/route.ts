@@ -5,6 +5,18 @@ interface CreateMemoRequest {
   content: string;
 }
 
+export async function GET(): Promise<NextResponse> {
+  const memos = await memoRepository.findAll();
+
+  return NextResponse.json(
+    memos.map((memo) => ({
+      id: memo.id,
+      content: memo.content,
+      createdAt: memo.createdAt.toISOString(),
+    }))
+  );
+}
+
 export async function POST(request: NextRequest): Promise<NextResponse> {
   const body: unknown = await request.json();
 
