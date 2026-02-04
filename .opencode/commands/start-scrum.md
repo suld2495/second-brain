@@ -1,11 +1,12 @@
 ---
 name: start-scrum
 description: Jira Scrum(Task) 이슈를 진행 중 상태로 전환합니다
+model: openai/gpt-5.2
 ---
 사용법: `/start-scrum <issue-key>`
 
 ## 요구사항
-- `<issue-key>`: 시작할 Jira 이슈 키 (예: PROJ-789)
+- `<issue-key>`: $ARGUMENTS
 
 ## 단계
 

@@ -1,0 +1,15 @@
+{
+    "$schema": "https://opencode.ai/config.json",
+    "plugin": [
+        "opencode-helicone-session",
+        "opencode-wakatime",
+        "@mohak34/opencode-notifier@latest"
+    ],
+    "mcp": {
+        "Atlassian": {
+            "type": "remote",
+            "url": "https://mcp.atlassian.com/v1/sse",
+            "enabled": true
+        }
+    }
+}

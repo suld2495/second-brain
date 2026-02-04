@@ -1,10 +1,11 @@
 ---
 description: Jira Scrum(Task) 이슈를 완료 상태로 전환합니다
+model: openai/gpt-5.1-codex-mini
 ---
 사용법: `/done-scrum [issue-key]`
 
 ## 요구사항
-- `[issue-key]`: 완료할 Jira 이슈 키 (선택사항)
+- issue-key: $ARGUMENTS
   - 생략하면 현재 활성 Scrum을 완료합니다.
 
 ## 단계
@@ -60,32 +61,27 @@ description: Jira Scrum(Task) 이슈를 완료 상태로 전환합니다
 
    - 변경 내용 요약
 
-   Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
    ```
 4. `git push`로 원격 저장소에 푸시
 
 ### 6. 브랜치 머지 및 정리
-1. GitHub PR 생성 (이미 있으면 생략):
+1. main 브랜치로 전환:
    ```bash
-   gh pr create --base main --head feature/<issue-key>
-   ```
-2. PR 머지 (머지 후 원격 브랜치 삭제 포함):
-   ```bash
-   gh pr merge --merge --delete-branch --auto
-   ```
-   - `--auto`는 merge 가능해지는 즉시 자동 머지합니다(리뷰/체크 대기 포함).
-3. 로컬 브랜치를 main으로 변경 후 최신화:
-   ```bash
-   # 워킹트리가 더럽다면(체크아웃 불가) 임시 보관
-   git status --porcelain
-   git stash -u -m "wip: before checkout main" || true
-
    git checkout main
    git pull origin main
    ```
-4. 로컬 feature 브랜치 삭제:
+2. feature 브랜치 머지:
+   ```bash
+   git merge feature/<issue-key>
+   ```
+3. main 브랜치 푸시:
+   ```bash
+   git push origin main
+   ```
+4. feature 브랜치 삭제:
    ```bash
    git branch -d feature/<issue-key>
+   git push origin --delete feature/<issue-key>
    ```
 
 ### 7. 로컬 상태 정리
